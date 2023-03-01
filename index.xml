@@ -1,17 +1,17 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Armbrust&#39;s Blog</title>
-        <link>https://daniel-armbrust.github.io/</link>
+        <link>https://daniel-armbrust.github.io/blog/</link>
         <description>This is my cool site</description>
         <generator>Hugo -- gohugo.io</generator><language>pt-br</language><managingEditor>darmbrust@gmail.com (Daniel Armbrust)</managingEditor>
             <webMaster>darmbrust@gmail.com (Daniel Armbrust)</webMaster><lastBuildDate>Fri, 30 Dec 2022 17:33:17 -0300</lastBuildDate>
-            <atom:link href="https://daniel-armbrust.github.io/index.xml" rel="self" type="application/rss+xml" />
+            <atom:link href="https://daniel-armbrust.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>Entendendo Processos e Threads</title>
-    <link>https://daniel-armbrust.github.io/posts/entendendo-processos-e-threads/</link>
+    <link>https://daniel-armbrust.github.io/blog/posts/entendendo-processos-e-threads/</link>
     <pubDate>Fri, 30 Dec 2022 17:33:17 -0300</pubDate>
     <author>Daniel Armbrust</author>
-    <guid>https://daniel-armbrust.github.io/posts/entendendo-processos-e-threads/</guid>
+    <guid>https://daniel-armbrust.github.io/blog/posts/entendendo-processos-e-threads/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/images/entendendo-processos-e-threads/" referrerpolicy="no-referrer">
             </div><h2 id="introdução">Introdução</h2>
