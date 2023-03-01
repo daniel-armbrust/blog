@@ -50,5 +50,533 @@
 <h2 id="definição-de-processo">Definição de Processo</h2>
 ]]></description>
 </item>
+<item>
+    <title>O que é Cloud Computing?</title>
+    <link>https://daniel-armbrust.github.io/blog/posts/o-que-e-cloud-computing/</link>
+    <pubDate>Thu, 25 Jun 2020 10:20:42 -0300</pubDate>
+    <author>Daniel Armbrust</author>
+    <guid>https://daniel-armbrust.github.io/blog/posts/o-que-e-cloud-computing/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/featured_image-1593112059-o-que-e-cloud-computing.jpg" referrerpolicy="no-referrer">
+            </div><h2 id="1-introdução">1. Introdução</h2>
+<p>Algumas das muitas definições existentes para o termo Cloud Computing:</p>
+<ul>
+<li>
+<p>Cloud Computing é um modelo computacional no qual é possível provisionar recursos de TI sob demanda, de
+acordo com o seu negócio e pagar somente pelo uso que se faz. Em sua essência, é uma nova forma de se
+provisionar recursos e serviços de TI.</p>
+</li>
+<li>
+<p>É uma forma de entrega/aluguel de recursos computacionais (servidores, storage, banco de dados, rede,
+software, etc), através da Internet.</p>
+</li>
+<li>
+<p>É uma nova arquitetura  no qual muda-se para uma nova forma de se adquirir TI. Agora paga-se pelo uso
+dos recursos em um modelo que se adequa a demanda, o que se convencionou chamar de elasticidade. Esta
+nova forma de aquisição de serviços de infraestrutura de TI reduz custo, e aumenta a produtividade.</p>
+</li>
+<li>
+<p><em><strong>Simon Wardley, &ldquo;Cloud Computing - Why IT Matters&rdquo; - OSCON 09</strong></em></p>
+<ul>
+<li>Cloud Computing é um termo genérico usado para descrever a transformação disruptiva da TI em uma economia
+baseada em serviços, impulsionada por um conjunto de condições econômicas, culturais e tecnológicas.</li>
+</ul>
+</li>
+</ul>
+<data id="id-1" data-raw></data>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/okqLxzWS5R4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<data id="id-2" data-raw></data>
+<ul>
+<li>
+<p><em><strong>2008, Gartner</strong></em></p>
+<ul>
+<li>&ldquo;&hellip;um estilo de computação no qual recursos escaláveis e elásticos habilitados para TI, são fornecidos
+como um serviço a clientes externos que usam tecnologias da Internet.&rdquo;</li>
+</ul>
+</li>
+<li>
+<p><em><strong>Forrester Research</strong></em></p>
+<ul>
+<li>&ldquo;&hellip;capacidades de TI (serviços, software ou infraestrutura) entregues via tecnologias da Internet em um
+modelo self-service no qual se paga somente por aquilo que é usado.&rdquo;</li>
+</ul>
+</li>
+<li>
+<p><em><strong>2009/2011, NIST (National Institute of Standards and Technology)</strong></em></p>
+<ul>
+<li>Cloud Computing é um modelo para permitir acesso onipresente, conveniente e de rede sob demanda, a um
+conjunto compartilhado de recursos de computação configuráveis (redes, servidores, armazenamento, aplicativos
+e serviços) que podem ser rapidamente provisionados e liberados, com o mínimo esforço de gerenciamento ou
+interação do provedor de serviços. Esse modelo de nuvem é composto de cinco características essenciais, três
+modelos de serviço e quatro modelos de implantação.&quot;</li>
+</ul>
+</li>
+<li>
+<p><em><strong>Cloud Computing: Concepts, Technology &amp; Architecture. Prentice Hall, 2013</strong></em></p>
+<ul>
+<li>&ldquo;A computação em nuvem é uma forma especializada de computação distribuída que introduz modelos de utilização
+para provisionar remotamente recursos escaláveis e medidos.&rdquo;</li>
+</ul>
+</li>
+</ul>
+<h2 id="2definições-do-nist">2.Definições do NIST</h2>
+<p>De acordo com o <em><a href="https://www.nist.gov/" target="_blank" rel="noopener noreffer ">NIST (National Institure of Standards and Technology)</a></em>, <em>Computação em Nuvem</em>
+é um modelo que permite acesso através da Internet a um conjunto de recursos computacionais (rede, armazenamento,
+servidores, serviços, etc) nos quais podem ser rapidamente criados e apagados, de forma fácil, sem a necessidade
+de qualquer intervenção humana (ex: ligar para um <em>Helpdesk</em> para solicitar a criação de um servidor).</p>
+<p>Um provedor de <em>Computação em Nuvem</em>, <em><strong>deve possuir algumas características que são essenciais</strong></em>. Além disso, um usuário
+deve ser capaz de <em>implementar sua aplicação (deploy)</em> ou <em>provisionar sua infraestrutura</em>, sobre um dos
+<em><strong>três modelos de serviços existentes</strong></em>.</p>
+<h3 id="características-essenciais">Características essenciais</h3>
+<p>Estas são características essenciais que devem estar presentes quando falamos de <em>Computação em Nuvem</em>. Basicamente, um
+provedor de serviços deve minimamente possuir:</p>
+<ul>
+<li>
+<p><strong>Autoatendimento sob demanda (On-demand self-service)</strong></p>
+<ul>
+<li>Um consumidor pode criar servidores, redes, banco de dados, etc, conforme sua demanda, sem necessitar de qualquer
+intervenção humana.</li>
+</ul>
+</li>
+<li>
+<p><strong>Amplo acesso à rede (Broad network access)</strong></p>
+<ul>
+<li>Os recursos computacionais estão disponíveis através da rede (Internet) e são acessados via mecanismos padronizados,
+e que podem ser utilizados por celulares, tablets, laptops ou estações de trabalho.</li>
+</ul>
+</li>
+<li>
+<p><strong>Conjunto de recursos (Resource pooling) / Multitenancy</strong></p>
+<ul>
+<li>Os recursos computacionais de um provedor são agrupados para servir múltiplos clientes, isolados uns dos outros,
+através de um modelo conhecido como multi-tenant (multilocatário). Os diferentes recursos físicos e virtuais, são
+dinamicamente atribuídos e reatribuídos, de acordo com a necessidade do cliente. O cliente geralmente não tem controle
+ou conhecimento sobre a localização exata dos recursos fornecidos pelo provedor de cloud. Porém, o provedor normalmente
+especifica a localização em nível de país, estado ou datacenter.</li>
+</ul>
+</li>
+<li>
+<p><strong>Rápida elasticidade (Rapid elasticity)</strong></p>
+<ul>
+<li>Os recursos computacionais podem ser criados e apagados a qualquer momento. Os clientes devem ter a impressão de que
+os recursos são ilimitados (podem ser adquiridos em qualquer quantidade e a qualquer momento).</li>
+<li>A elasticidade é uma propriedade fundamental. É ela quem dá o “poder” para se dimensionar recursos computacionais,
+diminuindo ou expandindo-os facilmente, com o mínimo de atrito. Além de maximizar a utilização dos recursos (utilizar
+somente o necessário e escalar somente quando necessário), possibilita redução de custo trazendo benefícios ao negócio.</li>
+<li>Elasticidade é uma das &ldquo;fortes considerações&rdquo; que os consumidores levam em conta quando planejam a adoção da Computação em Nuvem.</li>
+</ul>
+</li>
+<li>
+<p><strong>Serviço medido (Measured service)</strong></p>
+<ul>
+<li>É a habilidade que um provedor de serviços cloud tem em relação ao acompanhamento da utilização dos recursos
+de TI pelos seus consumidores.</li>
+<li>O provedor de serviços em cloud automaticamente controla, monitora e otimiza o uso dos recursos pelos clientes.
+Isto também é reportado, provendo transparência tanto para o provedor de serviços quanto para os clientes que
+utilizam os serviços.</li>
+</ul>
+</li>
+</ul>
+<data id="id-3" data-raw></data>
+<ul>
+<li><em><strong><a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf" target="_blank" rel="noopener noreffer ">NIST - Definition of Cloud Computing</a></strong></em></li>
+<li><em><strong><a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication500-292.pdf" target="_blank" rel="noopener noreffer ">NIST - Cloud Computing Reference Architecture</a></strong></em></li>
+</ul>
+<h3 id="modelo-de-serviços">Modelo de Serviços</h3>
+<p>Além das características essenciais, um provedor deve ser capaz de oferecer serviços dentro das modalidades abaixo:</p>
+<ul>
+<li>
+<p><em><strong>IaaS - Infrastructure as a Service (Infraestrutura como serviço)</strong></em></p>
+<ul>
+<li>É a capacidade que um provedor de serviços tem de oferecer uma infraestrutura de processamento (compute),
+armazenamento (storage) e rede (network). O consumidor não precisa se preocupar em gerenciar a virtualização,
+infraestrutura física ou mesmo os dispositivos de rede.</li>
+<li>Exemplo(s): <em><a href="https://www.oracle.com/cloud/" target="_blank" rel="noopener noreffer ">Oracle Cloud - OCI</a>, <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreffer ">Amazon Web Services (AWS)</a>,
+<a href="https://www.digitalocean.com/" target="_blank" rel="noopener noreffer ">DigitalOcean</a>, <a href="https://www.linode.com/" target="_blank" rel="noopener noreffer ">Linode</a>,
+<a href="https://cloud.google.com/compute/" target="_blank" rel="noopener noreffer ">Google Compute Engine (GCE)</a>.</em></li>
+</ul>
+</li>
+<li>
+<p><em><strong>PaaS - Platform as a Service (Plataforma como serviço)</strong></em></p>
+<ul>
+<li>O provedor de serviços oferece uma plataforma que permite os usuários executar, desenvolver ou gerenciar aplicações.
+Este modelo abstrai detalhes relacionados a infraestrutura de base como rede, virtualização e o sistema operacional.
+Ambiente <em>&ldquo;ready-to-use&rdquo;</em>, já com os recursos pré-configurados e pronto pra uso.</li>
+<li>Exemplo(s): <em><a href="https://www.heroku.com/" target="_blank" rel="noopener noreffer ">Heroku</a></em></li>
+</ul>
+</li>
+<li>
+<p><em><strong>SaaS - Software as a Service (Software como serviço)</strong></em></p>
+<ul>
+<li>É o modelo mais comum e amplamente utilizado. São aplicativos hospedados na nuvem que funcionam sem necessitar
+realizar download ou instalação local. Neste modelo, não há gerenciamento ou controle da infraestrutura de base
+(redes, servidores, sistema operacional, etc).</li>
+<li>Exemplo(s): <em><a href="https://www.oracle.com/applications/customer-experience/ecommerce/" target="_blank" rel="noopener noreffer ">Oracle Commerce</a>,
+<a href="https://www.oracle.com/applications/erp/" target="_blank" rel="noopener noreffer ">Oracle ERP Cloud</a>, <a href="https://gsuite.google.com/" target="_blank" rel="noopener noreffer ">Google G Suite</a>,
+<a href="https://trello.com/" target="_blank" rel="noopener noreffer ">Trello</a>, <a href="https://www.google.com/gmail/about/" target="_blank" rel="noopener noreffer ">Gmail</a>.</em></li>
+</ul>
+</li>
+</ul>
+<data id="id-4" data-raw></data>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/36zducUX16w" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<data id="id-5" data-raw></data>
+<h3 id="modelo-de-serviços-1">Modelo de Serviços</h3>
+<ul>
+<li>
+<p><em><strong>Nuvem Pública</strong></em></p>
+<ul>
+<li>A infraestrutura da Computação em Nuvem é disponibilizada e comercializada para o público em geral.</li>
+<li>Este é o modelo mais utilizado e vendido ao público por grandes corporações como <em>Oracle</em>, <em>Google</em>, <em>Microsoft</em> e <em>Amazon</em>.</li>
+</ul>
+</li>
+<li>
+<p><em><strong>Nuvem Privada</strong></em></p>
+<ul>
+<li>A infraestrutura da Computação em Nuvem é para uso exclusivo de uma única organização.</li>
+<li>As tecnologias Cloud são utilizadas dentro de ambientes controlados.</li>
+</ul>
+</li>
+<li>
+<p><em><strong>Nuvem Comunitária</strong></em></p>
+<ul>
+<li>A infraestrutura da Computação em Nuvem é utilizada por uma comunidade particular de clientes de diferentes
+organizações que compartilham interesses em comum.</li>
+<li>A administração da nuvem comunitária, normalmente é feita por administradores da própria comunidade ou às vezes por um terceiro.</li>
+</ul>
+</li>
+<li>
+<p><em><strong>Nuvem Híbrida</strong></em></p>
+<ul>
+<li>A infraestrutura da Computação em Nuvem normalmente é composta de duas ou mais nuvens (privada, comunitária
+ou pública) conectadas entre si.</li>
+<li>Neste modelo, um consumidor pode escolher provisionar recursos de TI &ldquo;mais sensíveis&rdquo;, em termos de segurança,
+em sua nuvem privada, e recursos &ldquo;menos sensíveis&rdquo; serem provisionados em nuvem pública.</li>
+<li>Como exemplo, a <em>Oracle</em> possui uma máquina chamada <em>Oracle Cloud at Customer</em>. Esta por sua vez implementa toda a
+tecnologia da Computação em Nuvem dentro do datacenter do cliente. Além disto, esta máquina se conecta aos serviços
+de nuvem pública da <em>Oracle</em>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="terminologias">Terminologias</h3>
+<p>Algumas terminologias que estão presentes quando falamos em <em>Computação em Nuvem</em>:</p>
+<ul>
+<li>
+<p><strong>Alta disponibilidade (High Availability - HA)</strong></p>
+<ul>
+<li>Ambientes computacionais configurados para estarem sempre disponíveis (24 horas, 7 dias por semana, 31 dias por
+mês e 365 dias do ano). Esses ambientes possuem equipamentos de hardware redundantes, além da arquitetura de software
+ser projetada em alta disponibilidade (não possuem um ponto único de falha). Quando existe qualquer falha, componentes
+de backup são utilizados de forma transparente e sem causar impacto ao usuário final.</li>
+</ul>
+</li>
+<li>
+<p><strong>Tolerante a falhas (Fault Tolerance)</strong></p>
+<ul>
+<li>Descreve como um provedor de Computação em Nuvem, garante o mínimo de indisponibilidade para os serviços que são
+vendidos aos seus consumidores.</li>
+</ul>
+</li>
+<li>
+<p><strong>Escalabilidade (Scalability)</strong></p>
+<ul>
+<li>Representa a capacidade de um recurso de TI em lidar com demandas de uso que aumentam ou diminuem.</li>
+<li>Diferentes meios referente a escalabilidade dos serviços:
+<ul>
+<li><em>Scaling out/in</em>
+<ul>
+<li>Conhecido como escalabilidade horizontal.</li>
+<li>Alocação ou liberação de recursos de TI do mesmo tipo.</li>
+<li><em>Scaling Out</em> → adição de recursos.</li>
+<li><em>Scaling In</em> → remoção de recursos.</li>
+</ul>
+</li>
+<li><em>Scaling up/down</em>
+<ul>
+<li>Conhecido como escalabilidade vertical.</li>
+<li>Menos comum de ser utilizado pois existe indisponibilidade dos recursos envolvidos.</li>
+<li>Um recurso de TI é substituído por outro recurso de maior ou menor capacidade.</li>
+<li><em>Scaling Up</em> → substitui um recursos por um de maior capacidade.</li>
+<li><em>Scaling Down</em> → substitui um recurso por um de menor capacidade.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></description>
+</item>
+<item>
+    <title>O que é Cloud Computing?</title>
+    <link>https://daniel-armbrust.github.io/blog/posts/o-que-e-oracle-cloud-always-free-services/</link>
+    <pubDate>Thu, 25 Jun 2020 10:20:42 -0300</pubDate>
+    <author>Daniel Armbrust</author>
+    <guid>https://daniel-armbrust.github.io/blog/posts/o-que-e-oracle-cloud-always-free-services/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/featured_image-1593112059-o-que-e-cloud-computing.jpg" referrerpolicy="no-referrer">
+            </div><h2 id="1-introdução">1. Introdução</h2>
+<p>Algumas das muitas definições existentes para o termo Cloud Computing:</p>
+<ul>
+<li>
+<p>Cloud Computing é um modelo computacional no qual é possível provisionar recursos de TI sob demanda, de
+acordo com o seu negócio e pagar somente pelo uso que se faz. Em sua essência, é uma nova forma de se
+provisionar recursos e serviços de TI.</p>
+</li>
+<li>
+<p>É uma forma de entrega/aluguel de recursos computacionais (servidores, storage, banco de dados, rede,
+software, etc), através da Internet.</p>
+</li>
+<li>
+<p>É uma nova arquitetura  no qual muda-se para uma nova forma de se adquirir TI. Agora paga-se pelo uso
+dos recursos em um modelo que se adequa a demanda, o que se convencionou chamar de elasticidade. Esta
+nova forma de aquisição de serviços de infraestrutura de TI reduz custo, e aumenta a produtividade.</p>
+</li>
+<li>
+<p><em><strong>Simon Wardley, &ldquo;Cloud Computing - Why IT Matters&rdquo; - OSCON 09</strong></em></p>
+<ul>
+<li>Cloud Computing é um termo genérico usado para descrever a transformação disruptiva da TI em uma economia
+baseada em serviços, impulsionada por um conjunto de condições econômicas, culturais e tecnológicas.</li>
+</ul>
+</li>
+</ul>
+<data id="id-1" data-raw></data>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/okqLxzWS5R4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<data id="id-2" data-raw></data>
+<ul>
+<li>
+<p><em><strong>2008, Gartner</strong></em></p>
+<ul>
+<li>&ldquo;&hellip;um estilo de computação no qual recursos escaláveis e elásticos habilitados para TI, são fornecidos
+como um serviço a clientes externos que usam tecnologias da Internet.&rdquo;</li>
+</ul>
+</li>
+<li>
+<p><em><strong>Forrester Research</strong></em></p>
+<ul>
+<li>&ldquo;&hellip;capacidades de TI (serviços, software ou infraestrutura) entregues via tecnologias da Internet em um
+modelo self-service no qual se paga somente por aquilo que é usado.&rdquo;</li>
+</ul>
+</li>
+<li>
+<p><em><strong>2009/2011, NIST (National Institute of Standards and Technology)</strong></em></p>
+<ul>
+<li>Cloud Computing é um modelo para permitir acesso onipresente, conveniente e de rede sob demanda, a um
+conjunto compartilhado de recursos de computação configuráveis (redes, servidores, armazenamento, aplicativos
+e serviços) que podem ser rapidamente provisionados e liberados, com o mínimo esforço de gerenciamento ou
+interação do provedor de serviços. Esse modelo de nuvem é composto de cinco características essenciais, três
+modelos de serviço e quatro modelos de implantação.&quot;</li>
+</ul>
+</li>
+<li>
+<p><em><strong>Cloud Computing: Concepts, Technology &amp; Architecture. Prentice Hall, 2013</strong></em></p>
+<ul>
+<li>&ldquo;A computação em nuvem é uma forma especializada de computação distribuída que introduz modelos de utilização
+para provisionar remotamente recursos escaláveis e medidos.&rdquo;</li>
+</ul>
+</li>
+</ul>
+<h2 id="2definições-do-nist">2.Definições do NIST</h2>
+<p>De acordo com o <em><a href="https://www.nist.gov/" target="_blank" rel="noopener noreffer ">NIST (National Institure of Standards and Technology)</a></em>, <em>Computação em Nuvem</em>
+é um modelo que permite acesso através da Internet a um conjunto de recursos computacionais (rede, armazenamento,
+servidores, serviços, etc) nos quais podem ser rapidamente criados e apagados, de forma fácil, sem a necessidade
+de qualquer intervenção humana (ex: ligar para um <em>Helpdesk</em> para solicitar a criação de um servidor).</p>
+<p>Um provedor de <em>Computação em Nuvem</em>, <em><strong>deve possuir algumas características que são essenciais</strong></em>. Além disso, um usuário
+deve ser capaz de <em>implementar sua aplicação (deploy)</em> ou <em>provisionar sua infraestrutura</em>, sobre um dos
+<em><strong>três modelos de serviços existentes</strong></em>.</p>
+<h3 id="características-essenciais">Características essenciais</h3>
+<p>Estas são características essenciais que devem estar presentes quando falamos de <em>Computação em Nuvem</em>. Basicamente, um
+provedor de serviços deve minimamente possuir:</p>
+<ul>
+<li>
+<p><strong>Autoatendimento sob demanda (On-demand self-service)</strong></p>
+<ul>
+<li>Um consumidor pode criar servidores, redes, banco de dados, etc, conforme sua demanda, sem necessitar de qualquer
+intervenção humana.</li>
+</ul>
+</li>
+<li>
+<p><strong>Amplo acesso à rede (Broad network access)</strong></p>
+<ul>
+<li>Os recursos computacionais estão disponíveis através da rede (Internet) e são acessados via mecanismos padronizados,
+e que podem ser utilizados por celulares, tablets, laptops ou estações de trabalho.</li>
+</ul>
+</li>
+<li>
+<p><strong>Conjunto de recursos (Resource pooling) / Multitenancy</strong></p>
+<ul>
+<li>Os recursos computacionais de um provedor são agrupados para servir múltiplos clientes, isolados uns dos outros,
+através de um modelo conhecido como multi-tenant (multilocatário). Os diferentes recursos físicos e virtuais, são
+dinamicamente atribuídos e reatribuídos, de acordo com a necessidade do cliente. O cliente geralmente não tem controle
+ou conhecimento sobre a localização exata dos recursos fornecidos pelo provedor de cloud. Porém, o provedor normalmente
+especifica a localização em nível de país, estado ou datacenter.</li>
+</ul>
+</li>
+<li>
+<p><strong>Rápida elasticidade (Rapid elasticity)</strong></p>
+<ul>
+<li>Os recursos computacionais podem ser criados e apagados a qualquer momento. Os clientes devem ter a impressão de que
+os recursos são ilimitados (podem ser adquiridos em qualquer quantidade e a qualquer momento).</li>
+<li>A elasticidade é uma propriedade fundamental. É ela quem dá o “poder” para se dimensionar recursos computacionais,
+diminuindo ou expandindo-os facilmente, com o mínimo de atrito. Além de maximizar a utilização dos recursos (utilizar
+somente o necessário e escalar somente quando necessário), possibilita redução de custo trazendo benefícios ao negócio.</li>
+<li>Elasticidade é uma das &ldquo;fortes considerações&rdquo; que os consumidores levam em conta quando planejam a adoção da Computação em Nuvem.</li>
+</ul>
+</li>
+<li>
+<p><strong>Serviço medido (Measured service)</strong></p>
+<ul>
+<li>É a habilidade que um provedor de serviços cloud tem em relação ao acompanhamento da utilização dos recursos
+de TI pelos seus consumidores.</li>
+<li>O provedor de serviços em cloud automaticamente controla, monitora e otimiza o uso dos recursos pelos clientes.
+Isto também é reportado, provendo transparência tanto para o provedor de serviços quanto para os clientes que
+utilizam os serviços.</li>
+</ul>
+</li>
+</ul>
+<data id="id-3" data-raw></data>
+<ul>
+<li><em><strong><a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf" target="_blank" rel="noopener noreffer ">NIST - Definition of Cloud Computing</a></strong></em></li>
+<li><em><strong><a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication500-292.pdf" target="_blank" rel="noopener noreffer ">NIST - Cloud Computing Reference Architecture</a></strong></em></li>
+</ul>
+<h3 id="modelo-de-serviços">Modelo de Serviços</h3>
+<p>Além das características essenciais, um provedor deve ser capaz de oferecer serviços dentro das modalidades abaixo:</p>
+<ul>
+<li>
+<p><em><strong>IaaS - Infrastructure as a Service (Infraestrutura como serviço)</strong></em></p>
+<ul>
+<li>É a capacidade que um provedor de serviços tem de oferecer uma infraestrutura de processamento (compute),
+armazenamento (storage) e rede (network). O consumidor não precisa se preocupar em gerenciar a virtualização,
+infraestrutura física ou mesmo os dispositivos de rede.</li>
+<li>Exemplo(s): <em><a href="https://www.oracle.com/cloud/" target="_blank" rel="noopener noreffer ">Oracle Cloud - OCI</a>, <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreffer ">Amazon Web Services (AWS)</a>,
+<a href="https://www.digitalocean.com/" target="_blank" rel="noopener noreffer ">DigitalOcean</a>, <a href="https://www.linode.com/" target="_blank" rel="noopener noreffer ">Linode</a>,
+<a href="https://cloud.google.com/compute/" target="_blank" rel="noopener noreffer ">Google Compute Engine (GCE)</a>.</em></li>
+</ul>
+</li>
+<li>
+<p><em><strong>PaaS - Platform as a Service (Plataforma como serviço)</strong></em></p>
+<ul>
+<li>O provedor de serviços oferece uma plataforma que permite os usuários executar, desenvolver ou gerenciar aplicações.
+Este modelo abstrai detalhes relacionados a infraestrutura de base como rede, virtualização e o sistema operacional.
+Ambiente <em>&ldquo;ready-to-use&rdquo;</em>, já com os recursos pré-configurados e pronto pra uso.</li>
+<li>Exemplo(s): <em><a href="https://www.heroku.com/" target="_blank" rel="noopener noreffer ">Heroku</a></em></li>
+</ul>
+</li>
+<li>
+<p><em><strong>SaaS - Software as a Service (Software como serviço)</strong></em></p>
+<ul>
+<li>É o modelo mais comum e amplamente utilizado. São aplicativos hospedados na nuvem que funcionam sem necessitar
+realizar download ou instalação local. Neste modelo, não há gerenciamento ou controle da infraestrutura de base
+(redes, servidores, sistema operacional, etc).</li>
+<li>Exemplo(s): <em><a href="https://www.oracle.com/applications/customer-experience/ecommerce/" target="_blank" rel="noopener noreffer ">Oracle Commerce</a>,
+<a href="https://www.oracle.com/applications/erp/" target="_blank" rel="noopener noreffer ">Oracle ERP Cloud</a>, <a href="https://gsuite.google.com/" target="_blank" rel="noopener noreffer ">Google G Suite</a>,
+<a href="https://trello.com/" target="_blank" rel="noopener noreffer ">Trello</a>, <a href="https://www.google.com/gmail/about/" target="_blank" rel="noopener noreffer ">Gmail</a>.</em></li>
+</ul>
+</li>
+</ul>
+<data id="id-4" data-raw></data>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/36zducUX16w" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<data id="id-5" data-raw></data>
+<h3 id="modelo-de-serviços-1">Modelo de Serviços</h3>
+<ul>
+<li>
+<p><em><strong>Nuvem Pública</strong></em></p>
+<ul>
+<li>A infraestrutura da Computação em Nuvem é disponibilizada e comercializada para o público em geral.</li>
+<li>Este é o modelo mais utilizado e vendido ao público por grandes corporações como <em>Oracle</em>, <em>Google</em>, <em>Microsoft</em> e <em>Amazon</em>.</li>
+</ul>
+</li>
+<li>
+<p><em><strong>Nuvem Privada</strong></em></p>
+<ul>
+<li>A infraestrutura da Computação em Nuvem é para uso exclusivo de uma única organização.</li>
+<li>As tecnologias Cloud são utilizadas dentro de ambientes controlados.</li>
+</ul>
+</li>
+<li>
+<p><em><strong>Nuvem Comunitária</strong></em></p>
+<ul>
+<li>A infraestrutura da Computação em Nuvem é utilizada por uma comunidade particular de clientes de diferentes
+organizações que compartilham interesses em comum.</li>
+<li>A administração da nuvem comunitária, normalmente é feita por administradores da própria comunidade ou às vezes por um terceiro.</li>
+</ul>
+</li>
+<li>
+<p><em><strong>Nuvem Híbrida</strong></em></p>
+<ul>
+<li>A infraestrutura da Computação em Nuvem normalmente é composta de duas ou mais nuvens (privada, comunitária
+ou pública) conectadas entre si.</li>
+<li>Neste modelo, um consumidor pode escolher provisionar recursos de TI &ldquo;mais sensíveis&rdquo;, em termos de segurança,
+em sua nuvem privada, e recursos &ldquo;menos sensíveis&rdquo; serem provisionados em nuvem pública.</li>
+<li>Como exemplo, a <em>Oracle</em> possui uma máquina chamada <em>Oracle Cloud at Customer</em>. Esta por sua vez implementa toda a
+tecnologia da Computação em Nuvem dentro do datacenter do cliente. Além disto, esta máquina se conecta aos serviços
+de nuvem pública da <em>Oracle</em>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="terminologias">Terminologias</h3>
+<p>Algumas terminologias que estão presentes quando falamos em <em>Computação em Nuvem</em>:</p>
+<ul>
+<li>
+<p><strong>Alta disponibilidade (High Availability - HA)</strong></p>
+<ul>
+<li>Ambientes computacionais configurados para estarem sempre disponíveis (24 horas, 7 dias por semana, 31 dias por
+mês e 365 dias do ano). Esses ambientes possuem equipamentos de hardware redundantes, além da arquitetura de software
+ser projetada em alta disponibilidade (não possuem um ponto único de falha). Quando existe qualquer falha, componentes
+de backup são utilizados de forma transparente e sem causar impacto ao usuário final.</li>
+</ul>
+</li>
+<li>
+<p><strong>Tolerante a falhas (Fault Tolerance)</strong></p>
+<ul>
+<li>Descreve como um provedor de Computação em Nuvem, garante o mínimo de indisponibilidade para os serviços que são
+vendidos aos seus consumidores.</li>
+</ul>
+</li>
+<li>
+<p><strong>Escalabilidade (Scalability)</strong></p>
+<ul>
+<li>Representa a capacidade de um recurso de TI em lidar com demandas de uso que aumentam ou diminuem.</li>
+<li>Diferentes meios referente a escalabilidade dos serviços:
+<ul>
+<li><em>Scaling out/in</em>
+<ul>
+<li>Conhecido como escalabilidade horizontal.</li>
+<li>Alocação ou liberação de recursos de TI do mesmo tipo.</li>
+<li><em>Scaling Out</em> → adição de recursos.</li>
+<li><em>Scaling In</em> → remoção de recursos.</li>
+</ul>
+</li>
+<li><em>Scaling up/down</em>
+<ul>
+<li>Conhecido como escalabilidade vertical.</li>
+<li>Menos comum de ser utilizado pois existe indisponibilidade dos recursos envolvidos.</li>
+<li>Um recurso de TI é substituído por outro recurso de maior ou menor capacidade.</li>
+<li><em>Scaling Up</em> → substitui um recursos por um de maior capacidade.</li>
+<li><em>Scaling Down</em> → substitui um recurso por um de menor capacidade.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></description>
+</item>
 </channel>
 </rss>
