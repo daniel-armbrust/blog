@@ -1,0 +1,56 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Armbrust&#39;s Blog</title>
+        <link>https://daniel-armbrust.github.io/</link>
+        <description>This is my cool site</description>
+        <generator>Hugo -- gohugo.io</generator><language>pt-br</language><managingEditor>darmbrust@gmail.com (Daniel Armbrust)</managingEditor>
+            <webMaster>darmbrust@gmail.com (Daniel Armbrust)</webMaster><lastBuildDate>Fri, 30 Dec 2022 17:33:17 -0300</lastBuildDate>
+            <atom:link href="https://daniel-armbrust.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>Entendendo Processos e Threads</title>
+    <link>https://daniel-armbrust.github.io/posts/entendendo-processos-e-threads/</link>
+    <pubDate>Fri, 30 Dec 2022 17:33:17 -0300</pubDate>
+    <author>Daniel Armbrust</author>
+    <guid>https://daniel-armbrust.github.io/posts/entendendo-processos-e-threads/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/entendendo-processos-e-threads/" referrerpolicy="no-referrer">
+            </div><h2 id="introdução">Introdução</h2>
+<p>Neste post eu pretendo desmistificar o que são Processos, Theads, Programação Paralela e Concorrente.</p>
+<p>Antes de ter que lidar com processos, threads ou programação paralela, eu procurei primeiramente entender mais sobre como funcionam os processadores da atualidade.</p>
+<h2 id="o-que-é-um-processo">O que é um Processo?</h2>
+<p>De maneira bem simples, um processo é um programa em execução. Quando temos um sistema operacional em execução, temos também uma coleção de processos sendo executados.</p>
+<p>Essa coleção de processos consistem em:</p>
+<ul>
+<li>Processos de Sistema Operacional que executam código do sistema</li>
+<li>Processo de Usuário que executam código de usuário</li>
+</ul>
+<p>Um programa, mantido em arquivo que contém uma lista de instruções, se torna uma entidade ativa quando executado. Ou seja, se torna um <em>processo</em> pois este é <em>&ldquo;carregado&rdquo;</em> em memória (load) e suas instruções são então executadas uma a uma pela CPU.</p>
+<p>Os termos <em>job</em>, <em>processo</em> ou <em>tarefa</em> são usados de forma igual para representar um programa em execução.</p>
+<p>Sistemas operacionais do tipo <em><a href="https://en.wikipedia.org/wiki/Time-sharing" target="_blank" rel="noopener noreffer ">time-sharing</a></em></p>
+<ul>
+<li>No UNIX, existem dois níveis de tarefa: o processo e a thread.</li>
+</ul>
+<h2 id="microprocessador-e-sistema-operacional">Microprocessador e Sistema Operacional</h2>
+<p><em>Microprocessador</em>, <em>CPU</em> ou <em>&ldquo;Unidade Central de Processamento&rdquo;</em>, é o cérebro do computador. Sua função é executar instruções, uma após a outra, que são obtidas da <em><a href="https://pt.wikipedia.org/wiki/Armazenamento_de_dados_de_computador#Armazenamento_prim%C3%A1rio" target="_blank" rel="noopener noreffer ">memória principal (RAM)</a></em>.</p>
+<p>A palavra <em>&ldquo;processamento&rdquo;</em> vem da ação de <em>processar dados</em>. É <em>&ldquo;central&rdquo;</em> do ponto de vista de arquitetura e também por sua importância, pois está no centro ou no meio, entre os demais dispositivos que formam um computador (dispositivos de E/S, memória principal, etc). Por último, é uma <em>&ldquo;unidade&rdquo;</em> visto que é um <em><a href="https://pt.wikipedia.org/wiki/Circuito_integrado" target="_blank" rel="noopener noreffer ">circuito integrado</a>.</em></p>
+<p>A maioria dos microprocessadores da atualidade são <em><a href="https://pt.wikipedia.org/wiki/Processador_multin%C3%BAcleo" target="_blank" rel="noopener noreffer ">multicore (multinúcleo)</a></em>. Isto quer dizer que há dois ou mais núcleos de processamento (cores) dentro da mesma pastilha de silício (um único chip que contém vários processadores). Temos então o equivalente a um ambiente <em>multiprocessado</em>, onde uma única CPU pode executar mais de uma instrução ao mesmo tempo (execução paralela). O sistema operacional trata cada núcleo como se fosse um processar diferente.</p>
+<p>Com apenas um núcleo de processamento (singlecore), o sistema operacional divide o tempo de CPU entre os diversos programas (ou processos) em execução. Ou seja, cada programa é executado um pouco de cada vez, de forma intercalada. Como essa alternância de execução entre os programas ocorre de forma muito rápida, tem-se a ilusão de que a CPU consegue executar vários programas ao mesmo tempo.</p>
+<p>O termo <em><a href="https://pt.wikipedia.org/wiki/Multitarefa" target="_blank" rel="noopener noreffer ">multitarefa</a></em> é usado quando o sistema operacional é capaz de executar mais de uma tarefa por vez, seja de forma paralela/alternada ou não.</p>
+<p>Visto que temos muitos modelos, separei alguns que eu tenho acesso direto. São eles:</p>
+<ul>
+<li>Intel Celeron (N3350)</li>
+<li>Intel Core i3</li>
+<li>Intel Core i7</li>
+<li>AMD Ryzen 7 (4000 Series)</li>
+</ul>
+<p>Antigamente, para se ter o real multiprocessamento, era necessário ter mais de um processador na mesma placa-mãe.</p>
+<p><figure><a class="lightgallery" href="/images/entendendo-processos-e-threads/motherboard-dual-cpu.png" title="alt_text" data-thumbnail="/images/entendendo-processos-e-threads/motherboard-dual-cpu.png" data-sub-html="<h2>Motherboard Dual-CPU</h2><p>alt_text</p>">
+        
+    </a><figcaption class="image-caption">Motherboard Dual-CPU</figcaption>
+    </figure></p>
+<p><em>NOTA: Hoje em dia há alguns modelos de placas que possibilitam adicionar dois processadores.</em></p>
+<h2 id="definição-de-processo">Definição de Processo</h2>
+]]></description>
+</item>
+</channel>
+</rss>
